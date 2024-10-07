@@ -27,10 +27,10 @@ public class Main {
                             }else{
                                 System.out.println("giocatore non aggiunto - è già presente un capitano");
                             }
-                        break;
+                            break;
                         case 2:
                             System.out.println(printSquadra());
-                        break;
+                            break;
                         case 3:
                             System.out.println("inserisci in ordine: nome_precedente INVIO\nnome_nuvo INVIO goal_nuovi INVIO capitano? (true o false)");
                             if(editGiocatore(in.next(),in.next(),in.nextInt(),in.nextBoolean())){
@@ -38,7 +38,7 @@ public class Main {
                             }else{
                                 System.out.println("giocatore non trovato");
                             }
-                        break;
+                            break;
                         case 4:
                             System.out.println("inserisci il nome del giocatore da eliminare");
                             if (delGiocatore(in.next())){
@@ -46,7 +46,9 @@ public class Main {
                             }else{
                                 System.out.println("giocatore non trovato");
                             }
-                        break;
+                            break;
+                        case 5:
+                            break;
                         default:
                     }
 
