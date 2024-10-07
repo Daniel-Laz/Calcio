@@ -11,7 +11,44 @@ public class Main {
         int selezione;
         do{
             System.out.println("menu:\n" +
-                    "1. ");
+                    "1. aggiunta giocatore\n" +
+                    "2. visualizza squadra\n" +
+                    "3. modifica giocatore\n" +
+                    "4. cancella giocatore\n" +
+                    "5. visualizza giocatori con > 5 goal\n" +
+                    "6. visualizza capitano - se non ci sono capitani ne assegna uno casualmente");
+                    selezione = in.nextInt();
+
+                    switch(selezione){
+                        case 1:
+                            System.out.println("inserisci in ordine: nome INVIO goal INVIO capitano? (true o false)");
+                            if (addCalciatore(in.next(),in.nextInt(),in.nextBoolean())){
+                                System.out.println("giocatore aggiunto");
+                            }else{
+                                System.out.println("giocatore non aggiunto - è già presente un capitano");
+                            }
+                        break;
+                        case 2:
+                            System.out.println(printSquadra());
+                        break;
+                        case 3:
+                            System.out.println("inserisci in ordine: nome_precedente INVIO\nnome_nuvo INVIO goal_nuovi INVIO capitano? (true o false)");
+                            if(editGiocatore(in.next(),in.next(),in.nextInt(),in.nextBoolean())){
+                                System.out.println("giocatore modificato");
+                            }else{
+                                System.out.println("giocatore non trovato");
+                            }
+                        break;
+                        case 4:
+                            System.out.println("inserisci il nome del giocatore da eliminare");
+                            if (delGiocatore(in.next())){
+                                System.out.println("giocatore eliminato");
+                            }else{
+                                System.out.println("giocatore non trovato");
+                            }
+                        break;
+                        default:
+                    }
 
 
 
@@ -21,7 +58,7 @@ public class Main {
 
     public static boolean addCalciatore(String name, int goal, boolean capitano){
         if (capitano){
-            for (int i = 0; i< calciatori.length; i++){
+            for (int i = 0; i< contatore; i++){
                 if (calciatori[i].isCapitano()){
                     return false;
                 }
