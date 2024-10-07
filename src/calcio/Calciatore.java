@@ -1,10 +1,13 @@
 package calcio;
 
 public class Calciatore {
+
+    // attributi
     private String name;
     private int goal;
     private boolean capitano;
 
+    // metodi get
     public String getName(){
         return name;
     }
@@ -15,6 +18,7 @@ public class Calciatore {
         return capitano;
     }
 
+    // metodi set
     public void setCapitano(boolean capitano) {
         this.capitano = capitano;
     }
@@ -28,6 +32,7 @@ public class Calciatore {
         this.name = name;
     }
 
+    // tutti i possibili costrutti
     public Calciatore(){
     }
     public Calciatore(String name, int goal, boolean capitano){
@@ -56,6 +61,4 @@ public class Calciatore {
     public Calciatore(int goal){
         setGoal(goal);
     }
-
-
 }
