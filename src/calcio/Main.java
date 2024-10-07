@@ -48,5 +48,14 @@ public class Main {
         }
         return false;
     }
+    public static String goal5(){
+        String out="";
+        for (int i = 0; i < contatore ; i++){
+            if(calciatori[i].getGoal()>5){
+                out+= calciatori[i]+"\n";
+            }
+        }
+        return out;
+    }
 
 }
