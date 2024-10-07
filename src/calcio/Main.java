@@ -20,5 +20,19 @@ public class Main {
         contatore++;
         return true;
     }
+    public static String printSquadra(){
+        String out="";
+        for (int i = 0; i < calciatori.length ; i++){
+            out+= calciatori[i]+"\n";
+        }
+        return out;
+    }
+    public static boolean editGiocatore(String name, String newName, int newGoal, boolean newCapitano){
+        for (int i= 0; i< calciatori.length; i++){
+            if (name.equalsIgnoreCase(calciatori[i].getName())){
+                calciatori[i] = new Calciatore(newName,newGoal,newCapitano);
+            }
+        }
+    }
 
 }
