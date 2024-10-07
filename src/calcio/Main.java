@@ -22,16 +22,28 @@ public class Main {
     }
     public static String printSquadra(){
         String out="";
-        for (int i = 0; i < calciatori.length ; i++){
+        for (int i = 0; i < contatore ; i++){
             out+= calciatori[i]+"\n";
         }
         return out;
     }
     public static boolean editGiocatore(String name, String newName, int newGoal, boolean newCapitano){
-        for (int i= 0; i< calciatori.length; i++){
+        for (int i= 0; i< contatore; i++){
             if (name.equalsIgnoreCase(calciatori[i].getName())){
                 calciatori[i] = new Calciatore(newName,newGoal,newCapitano);
                 return true;
+            }
+        }
+        return false;
+    }
+    public static boolean delGiocatore(String name){
+        for (int i= 0; i< contatore; i++){
+            if (name.equalsIgnoreCase(calciatori[i].getName())){
+                for (int j=i; j<contatore-1; j++) {
+                    calciatori[j] = calciatori[j + 1];
+                    contatore--;
+                    return true;
+                }
             }
         }
         return false;
