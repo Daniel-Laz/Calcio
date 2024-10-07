@@ -3,7 +3,6 @@ package calcio;
 public class Main {
     public static Calciatore[] calciatori= new Calciatore[100];
     public static int contatore;
-
     public static void main(String[] args) {
 
     }
@@ -56,6 +55,14 @@ public class Main {
             }
         }
         return out;
+    }
+    public static String getCapitano(){
+        for (int i = 0; i < contatore; i++){
+            if (calciatori[i].isCapitano()){
+                return calciatori[i].getName();
+            }
+        }
+        return null;
     }
 
 }
