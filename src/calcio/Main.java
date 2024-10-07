@@ -31,8 +31,10 @@ public class Main {
         for (int i= 0; i< calciatori.length; i++){
             if (name.equalsIgnoreCase(calciatori[i].getName())){
                 calciatori[i] = new Calciatore(newName,newGoal,newCapitano);
+                return true;
             }
         }
+        return false;
     }
 
 }
