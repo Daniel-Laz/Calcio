@@ -1,4 +1,5 @@
 package calcio;
+import java.util.Random;
 
 public class Main {
     public static Calciatore[] calciatori= new Calciatore[100];
@@ -62,7 +63,13 @@ public class Main {
                 return calciatori[i].getName();
             }
         }
-        return null;
+        //se non ci sono capitani chiama il metodo che assegna il ruolo capitano casualmente e ritorna il suo nome
+        return calciatori[setCapitanoRandom()].getName();
     }
-
+    public static int setCapitanoRandom(){
+        Random random = new Random();
+        int casuale = random.nextInt(contatore);
+        calciatori[casuale].setCapitano(true);
+        return casuale;
+    }
 }
