@@ -1,10 +1,21 @@
 package calcio;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static Calciatore[] calciatori= new Calciatore[100];
     public static int contatore;
+
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int selezione;
+        do{
+            System.out.println("menu:\n" +
+                    "1. ");
+
+
+
+        }while(selezione!=0);
 
     }
 
