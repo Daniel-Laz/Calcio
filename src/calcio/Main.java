@@ -91,10 +91,10 @@ public class Main {
             if (name.equalsIgnoreCase(calciatori[i].getName())){
                 for (int j=i; j<contatore-1; j++) {
                     calciatori[j] = calciatori[j + 1];
-                    return true;
                 }
                 calciatori[contatore]=null;
                 contatore--;
+                return true;
             }
         }
         return false;
