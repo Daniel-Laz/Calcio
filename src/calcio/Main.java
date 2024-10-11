@@ -48,6 +48,10 @@ public class Main {
                             }
                             break;
                         case 5:
+                            System.out.println(goal5());
+                            break;
+                        case 6:
+                            System.out.println(getCapitano());
                             break;
                         default:
                     }
@@ -103,7 +107,7 @@ public class Main {
         String out="";
         for (int i = 0; i < contatore ; i++){
             if(calciatori[i].getGoal()>5){
-                out+= calciatori[i]+"\n";
+                out+= calciatori[i].getName()+" goal:"+calciatori[i].getGoal()+" capitano:"+calciatori[i].isCapitano()+"\n";
             }
         }
         return out;
