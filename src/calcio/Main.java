@@ -22,7 +22,7 @@ public class Main {
                     switch(selezione){
                         case 1:
                             System.out.println("inserisci in ordine: nome INVIO goal INVIO capitano? (true o false)");
-                            if (addCalciatore(in.next(),in.nextInt(),in.nextBoolean())){
+                            if (addCalciatore(in.next(), in.nextInt(),in.nextBoolean())){
                                 System.out.println("giocatore aggiunto");
                             }else{
                                 System.out.println("giocatore non aggiunto - è già presente un capitano");
@@ -73,7 +73,7 @@ public class Main {
     public static String printSquadra(){
         String out="";
         for (int i = 0; i < contatore ; i++){
-            out+= calciatori[i]+"\n";
+            out+= calciatori[i].getName()+" goal:"+calciatori[i].getGoal()+" capitano:"+calciatori[i].isCapitano()+"\n";
         }
         return out;
     }
@@ -93,8 +93,8 @@ public class Main {
                     calciatori[j] = calciatori[j + 1];
                     return true;
                 }
+                calciatori[contatore]=null;
                 contatore--;
-                calciatori[contatore]=new Calciatore();
             }
         }
         return false;
